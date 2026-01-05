@@ -1,0 +1,84 @@
+# starship.toml
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline = false
+palette = "default"
+
+format = """
+$directory\
+$line_break\
+$character\
+"""
+
+right_format = """
+$git_branch\
+$c\
+$rust\
+$java\
+"""
+
+[palettes.default]
+prompt_ok = "#52bdff"
+prompt_err = "#e23140"
+icon = "#08bdba"
+separator = "#35312c"
+background = "#161616"
+
+directory = "#DB4B4B"
+duration = "#e26f31"
+status = "#e23140"
+
+[character]
+success_symbol = "[󰅂](fg:prompt_ok)"
+error_symbol = "[󰅂](fg:prompt_err)"
+
+[directory]
+format = "[$path](bold fg:icon) "
+read_only = "󰉐"
+truncate_to_repo = false
+truncation_length = 0
+
+[c]
+format = '[\(${symbol} (${version})\)]($style) '
+version_format = 'v${raw}'
+detect_extensions = [
+  "c",
+  "h",
+  "cc",
+  "cpp",
+  "cxx",
+  "hpp",
+  "x86_64",
+]
+symbol = ""
+commands = [["g++", "--version"]]
+
+[rust]
+format = '[\(${symbol} (${version})\)]($style) '
+version_format = 'v${raw}'
+detect_extensions = [
+  "lock",
+  "toml",
+  "rs"
+]
+symbol = ""
+
+[java]
+format = '[\(${symbol}(${version})\)]($style)'
+version_format = 'v${raw}'
+detect_extensions = ["java", "class", "jar", "gradle", "clj", "cljc"]
+detect_files = [
+  "pom.xml",
+  "build.gradle.kts",
+  "build.sbt",
+  ".java-version",
+  "deps.edn",
+  "project.clj",
+  "build.boot",
+  ".sdkmanrc",
+  ".classpath",
+  ".project",
+]
+symbol = "󰬷 "
+style = "duration"

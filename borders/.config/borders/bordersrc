@@ -1,0 +1,11 @@
+#!/bin/bash
+
+options=(
+    hidpi=on
+    width=20.0
+    active_color=0xff0000FF
+    blacklist="WezTerm"
+    whitelist="Safari"
+)
+
+borders "${options[@]}"
