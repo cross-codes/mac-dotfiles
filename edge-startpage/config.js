@@ -52,7 +52,7 @@ const CONFIG = {
       id: "3",
       name: "Nalanda",
       icon: "book",
-      link: "https://nalanda-aws.bits-pilani.ac.in/",
+      link: "https://nalanda.bits-pilani.ac.in/",
     },
     {
       id: "4",
