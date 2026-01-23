@@ -1,0 +1,22 @@
+let mapleader = " "
+let maplocalleader = ";"
+
+noremap <Space> <Nop>
+
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+nnoremap <D-d> <C-d>zz
+nnoremap <D-u> <C-u>zz
+
+vnoremap x "_x
+
+nnoremap <D-a> gg<S-v>G
+nnoremap <CR> ciw
+
+nnoremap U :redo<CR>
+
+nnoremap <expr> i len(getline('.')) == 0 ? '"_cc' : 'i'
+nnoremap <expr> dd match(getline('.'), '^\s*$') != -1 ? '"_dd' : 'dd'
+
+nmap <LocalLeader>d <Action>(ActivateProblemsViewToolWindow)

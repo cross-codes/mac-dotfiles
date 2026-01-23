@@ -108,6 +108,7 @@ local config = {
   },
 
   font_size = is_windows and 14 or 22,
+  initial_rows = 37,
 
   hide_tab_bar_if_only_one_tab = false,
   use_fancy_tab_bar = false,
@@ -122,6 +123,12 @@ local config = {
       key = 'q',
       mods = 'CMD',
       action = wt.action.DisableDefaultAssignment,
+    },
+
+    {
+      key = 'Enter',
+      mods = 'OPT',
+      action = wt.action.SpawnCommandInNewWindow {}
     },
 
     -- Event handlers
