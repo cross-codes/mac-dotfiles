@@ -67,6 +67,7 @@ export def --env set-project [] {
     let result = (
     ^find /Users/cross/config
         /Users/cross/MockingDSA
+        /Users/cross/Projects
         -mindepth 0 -type d
         -not -path "*/venv*"
         -not -path "*/node_modules*"

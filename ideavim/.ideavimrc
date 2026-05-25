@@ -1,7 +1,6 @@
-let mapleader = " "
-let maplocalleader = ";"
-
-noremap <Space> <Nop>
+set clipboard+=unnamedplus
+set leader=" "
+nnoremap ; <Nop>
 
 nnoremap + <C-a>
 nnoremap - <C-x>
@@ -17,6 +16,9 @@ nnoremap <CR> ciw
 nnoremap U :redo<CR>
 
 nnoremap <expr> i len(getline('.')) == 0 ? '"_cc' : 'i'
-nnoremap <expr> dd match(getline('.'), '^\s*$') != -1 ? '"_dd' : 'dd'
+nnoremap <expr> dd getline('.') =~ '^\s*$' ? '"_dd' : 'dd'
 
-nmap <LocalLeader>d <Action>(ActivateProblemsViewToolWindow)
+nnoremap ;h :action ShowHoverInfo<CR>
+nnoremap <C-,> :action Run<CR>
+nnoremap ;d :action ActivateProblemsViewToolWindow<CR>
+nnoremap <Space>r :action RenameElement<CR>

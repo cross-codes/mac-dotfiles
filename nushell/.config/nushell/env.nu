@@ -31,10 +31,10 @@ if $nu.os-info.name == 'linux' {
   $env.PATH = ($env.PATH | uniq)
 
   ulimit -Sn 65535
+  ulimit -Ss 65520
 }
 
 if $nu.os-info.name == "macos" {
-  source $"($nu.home-path)/.cargo/env.nu"
   $env.PATH = ($env.PATH | split row (char esep))
   path add "/opt/homebrew/bin"
   path add ($env.HOME | path join ".cargo" "bin")
@@ -45,7 +45,9 @@ if $nu.os-info.name == "macos" {
   $env.PATH = ($env.PATH | prepend $"($java_home)/bin")
 
   $env.PATH = ($env.PATH | uniq)
+  $env.HOMEBREW_NO_ENV_HINTS = 1
   ulimit -Sn 65535
+  ulimit -Ss 65520
 }
 
 

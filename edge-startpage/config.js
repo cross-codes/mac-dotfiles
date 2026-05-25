@@ -58,7 +58,7 @@ const CONFIG = {
       id: "4",
       name: "Clasroom",
       icon: "clipboard",
-      link: "https://classroom.google.com/u/1/",
+      link: "https://classroom.google.com/u/2/",
     },
     {
       id: "5",
